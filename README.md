@@ -45,3 +45,4 @@ but I had no time for that also, to make it much more simpler and in fact easier
 - I finished all the task, probably I misunderstood the last model fields of practices, where I added Tags external library to be able to create different tags for different fields of practice.
 - Pagination is not ideal in the front end sense, I am most of the front end probably sucks.
 - Public storage(filesystem) is available locally, but on the Heroku that is not possible, for those kinds of environments, we will need to use S3 or other type of CDNs.
+- Had to solve CSRF for the forms, cause page 419 Page expired was popping and I was unable to log in.
