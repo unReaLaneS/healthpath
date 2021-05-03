@@ -13,11 +13,6 @@ class FieldsOfPractice extends Model
 
     protected $guarded = [];
 
-    protected $attributes = [
-        'slug' => ['test',],
-        'name' => ['test']
-    ];
-
     public function practices()
     {
         return $this->belongsToMany(Practice::class, 'practices__fields_of_practices', 'fields_of_practice_id');
