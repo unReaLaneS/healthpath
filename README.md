@@ -1,62 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+##Explanation
+I started working on this project, last 2 nights for a few hours, cause I had no free time in last few days, so only weekend was my option.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+I haven't worked Laravel for more than 3 years, but I finished project as asked,
+probably it is not best code ever, but in a short time, I will be in the top form as I promised, I am fast learner.
+I need to learn best practices in the Laravel, like I have now in the Django(Python).
 
-## About Laravel
+## SETUP
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- First of all you will need to install Laravel on you machine.
+- Second thing you will need to install composer, after that run **[composer install]()**
+- You will need to install NodeJS, so after NodeJS installation finished, you will need to run **[npm install]()**
+- You will need local database I used XAMPP for the local database and also PhpMyAdmin.
+## Git clone
+Project is deployed to the Heroku, so here is repo on the Heroku.
+You can just run git clone https://git.heroku.com/immense-cliffs-50739.git.
+After repo is cloned locally, you will need to change directory to the root of that project.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Migrations and Seeds
+Locally you will need to run **[php artisan migrate]()**, so after that you will need to run
+**[php artisan db:seed]()**, after everything is finished, you can run **[php artisan serve]()** to start local server.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## HEROKU DEPLOYMENT
+I had to install HEROKU CLI and create an account on Heroku, for MySQL database to be used, I had to verify my credit card.
+I followed steps as in the Heroku documentation is stated, but had few different issues:
+- After deployment migration were not working(later found out that local database was MariaDB, but on the Heroku, I used MySQL, but had no time to change it)
+- Different migrations behaved totally different from the local environment, so I had to find workarounds for these issues(Like to used text instead of json in migrations).
+- After deployment, had to add different environment variables, cause problem was with insecure connections and forms. This made me change different environment variable, to the point of changing SESSION_STORAGE, also APP_URL was needed, had to activate APP_DEBUG to be True, to see what is happening, even if that is not a practice in the production environments.
+- Had to expell some of the route() method or assets() and to use basic string, cause https would create problem for login and different pages.
 
-## Learning Laravel
+##USAGE
+The heroku application can be found here:
+https://immense-cliffs-50739.herokuapp.com/
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+There are two users:
+1. admin@gmail.com -> password (will work)
+2. anes@gmail.com  -> password (wont work)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+admin@gmail.com is an Admin user, anes@gmail.com is not an Admin user.
+This admin part of the task is finished by using only 1 field is_admin on the User model, that should be solved by using Roles and Permission(RBAC),
+but I had no time for that also, to make it much more simpler and in fact easier to maintain. Also users can have more than one role at a time.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##ISSUES
+- I finished all the task, probably I misunderstood the last model fields of practices, where I added Tags external library to be able to create different tags for different fields of practice.
+- Pagination is not ideal in the front end sense, I am most of the front end probably sucks.
+- Public storage(filesystem) is available locally, but on the Heroku that is not possible, for those kinds of environments, we will need to use S3 or other type of CDNs.
