@@ -47,4 +47,4 @@ but I had no time for that also, to make it much more simpler and in fact easier
 - Public storage(filesystem) is available locally, but on the Heroku that is not possible, for those kinds of environments, we will need to use S3 or other type of CDNs.
 - Had to solve CSRF for the forms, cause page 419 Page expired was popping and I was unable to log in.
 - You will probably have issue with creation of the fields of practice, they work locally, but on the Heroku, I found this to be an issue: https://github.com/spatie/laravel-translatable/issues/208,
-but as I said, changing MySQL database to MariaDB, at the last moment, I had no time to switch it that easily.
+but as I said, changing MySQL database to MariaDB, at the last moment, I had no time to switch it that easily, I found few solution, but Models that are using this, were of the external library.
