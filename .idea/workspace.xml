@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_01_235518_create_tag_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_01_235518_create_tag_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +180,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619903534179</updated>
-      <workItem from="1619903535705" duration="42121000" />
+      <workItem from="1619903535705" duration="42664000" />
     </task>
     <servers />
   </component>
